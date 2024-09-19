@@ -1,0 +1,23 @@
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+@media screen and (min-width: 55em) {
+}
+
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    p, span, ul, li {
+  color: #2d4338;
+  font-weight: 100;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-size: 1rem;
+}
+*/

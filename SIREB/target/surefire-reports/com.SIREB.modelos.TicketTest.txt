@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.SIREB.modelos.TicketTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.SIREB.modelos.TicketTest
+testGetTicket  Time elapsed: 0 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[0311220]> but was:<[1906241]>
+	at com.SIREB.modelos.TicketTest.testGetTicket(TicketTest.java:27)
+

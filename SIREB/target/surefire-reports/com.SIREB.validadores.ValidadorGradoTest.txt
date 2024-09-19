@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.SIREB.validadores.ValidadorGradoTest
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.781 s <<< FAILURE! - in com.SIREB.validadores.ValidadorGradoTest
+testValidarGradoPositivo  Time elapsed: 0.01 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.SIREB.validadores.ValidadorGradoTest.testValidarGradoPositivo(ValidadorGradoTest.java:47)
+

@@ -1,0 +1,219 @@
+                <div class="row">
+                    <div class="alert alert alert-primary" role="alert">
+                        <h4 class="text-primary text-center">Administrar Bomberos</h4>
+                    </div>
+                    <div class="alert alert-success text-center mensajeRespuesta" id="mensajeAlerta" role="alert">
+                    </div>
+                    <!-- agregar / editar formulario emergente -->
+                    <div class="modal fade" id="ventanabombero" tabindex="-1" role="dialog" aria-labelledby="ventanabomberoLabel" aria-hidden="true">
+                         <div class="modal-dialog">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <h5 class="modal-title" id="exampleModalLabel" style="display:inline;">Agregar/Editar bombero <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" style="opacity: 100;">
+                                        <span class="botCerrar-setPos"><a class="botCerrar-ico botCerrar-close" href="#"></a></span>
+                                    </button>
+                                 </div>
+                                 <form id="formAgregar" method="POST" enctype="multipart/form-data">
+                                     <div class="modal-body">
+                                         <div class="row">
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="nombre1" class="control-label">1er. Nombre</label>
+                                                     <input type="text" class="form-control" id="nombre1" name="nombre1" required="required">
+                                                     <span class="fa fa-user-circle-o form-control-feedback" onclick="javascript:$('#nombre1').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="nombre2" class="control-label">2do. Nombre</label>
+                                                     <input type="text" class="form-control" id="nombre2" name="nombre2">
+                                                     <span class="fa fa-user-circle-o form-control-feedback" onclick="javascript:$('#nombre2').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="apellido" class="control-label">Apellido</label>
+                                                     <input type="text" class="form-control" id="apellido" name="apellido" required="required">
+                                                     <span class="fa fa-users form-control-feedback" onclick="javascript:$('#apellido').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="telefonoCasa" class="control-label">Telefono Casa</label>
+                                                     <input type="text" class="form-control" id="telefonoCasa" name="telefonoCasa">
+                                                     <span class="fa fa-phone form-control-feedback" onclick="javascript:$('#telefonoCasa').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="telefonoMovil" class="control-label">Telefono Movil</label>
+                                                     <input type="text" class="form-control" id="telefonoMovil" name="telefonoMovil" required="required">
+                                                     <span class="fa fa-phone form-control-feedback" onclick="javascript:$('#telefonoMovil').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="direccion" class="control-label">Direccion</label>
+                                                     <input type="text" class="form-control" id="direccion" name="direccion" required="required">
+                                                     <span class="fa fa-map-marker form-control-feedback" onclick="javascript:$('#direccion').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="fechaNacimiento" class="control-label">Fecha Nacimiento</label>
+                                                     <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required="required">
+                                                     <span class="fa fa-birthday-cake form-control-feedback" onclick=""></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="edad" class="control-label">Edad</label>
+                                                     <input type="number" class="form-control" id="edad" name="edad" required="required">
+                                                     <span class="fa fa-heartbeat form-control-feedback" onclick="javascript:$('#edad').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="factorSanguineo" class="control-label">Factor Sanguineo</label>
+                                                     <select class="form-control" id="factorSanguineo" name="factorSanguineo" required="required" aria-label="Seleccione factor Sanguineo" style="appearance: none; -webkit-appearance: none; -moz-appearance: none;">
+                                                         <option value="A+" selected>A+</option>
+                                                         <option value="A-">A-</option>
+                                                         <option value="B+">B+</option>
+                                                         <option value="B-">B-</option>
+                                                         <option value="AB+">AB+</option>
+                                                         <option value="AB-">AB-</option>
+                                                         <option value="0+">0+</option>
+                                                         <option value="0-">0-</option>
+                                                     </select>
+                                                     <span class="fa fa-tint form-control-feedback"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="genero" class="control-label">Genero</label>
+                                                     <select class="form-control" id="genero" name="genero" required="required" aria-label="Seleccione Genero" style="appearance: none; -webkit-appearance: none; -moz-appearance: none;">
+                                                         <option value="M" selected>Masculino</option>
+                                                         <option value="F">Femenino</option>
+                                                         <option value="X">Otro</option>
+                                                     </select>
+                                                     <span class="fa fa-venus-mars form-control-feedback"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="Grado" class="control-label">Grado</label>
+                                                     <select class="form-control" id="Grado" name="Grado" required="required" aria-label="Seleccione Grado" style="appearance: none; -webkit-appearance: none; -moz-appearance: none;">
+                                                     </select>
+                                                     <span class="fa fa-eject form-control-feedback"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="dni" class="control-label">DNI</label>
+                                                     <input type="text" class="form-control" id="dni" name="dni" required="required" maxLength="8" minLength="5">
+                                                     <span class="fa fa-address-card-o form-control-feedback" onclick="javascript:$('#dni').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="fechaAlta" class="control-label">Fecha Alta</label>
+                                                     <input type="date" class="form-control" id="fechaAlta" name="fechaAlta" required="required">
+                                                     <span class="fa fa-calendar-plus-o form-control-feedback"></span>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="modal-footer">
+                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                         <button type="submit" class="btn btn-success" id="addButton">Guardar</button>
+                                         <input type="hidden" name="action" value="agregarbombero">
+                                         <input type="hidden" name="id" id="id" value="">
+                                         <input type="hidden" name="idCuartel" id="idCuartel" value="">
+                                     </div>
+                                 </form>
+                             </div>
+                         </div>
+                    </div>
+                    <!-- fin agregar / editar formulario emergente -->
+                    <!-- perfil formulario emergente -->
+                    <div class="modal" id="perfilModal" tabindex="-1" role="dialog" aria-labelledby="perfilModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel" style="display: inline;">Perfil <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" style="opacity: 100;">
+                                        <span class="botCerrar-setPos"><a class="botCerrar-ico botCerrar-close" href="#"></a></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container" id="perfil">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin perfil formulario emergente -->
+
+                    <!-- borrar formulario emergente -->
+                    <div class="modal" id="borrarModal" tabindex="-1" role="dialog" aria-labelledby="borrarModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel" style="display: inline;">Eliminar <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" style="opacity: 100;">
+                                        <span class="botCerrar-setPos"><a class="botCerrar-ico botCerrar-close" href="#"></a></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container" id="borrar">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" id="eliminarDialog">Eliminar</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin borrar formulario emergente -->
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <button type="button" class="btn btn-primary botonNuevo" data-toggle="modal" data-target="#ventanabombero" id="botonNuevo">Agregar bombero <i class="fa fa-plus"></i></button>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-lg-push-5">
+                            <div class="form-group has-feedback has-search">
+                                <span class="glyphicon glyphicon-search form-control-feedback buscarIcon"></span>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Buscar..." id="inputBuscar">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- tabla de bomberos -->
+                    <table class="table" id="tablabomberos">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Grado</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <!-- fin tabla de bomberos -->
+                    <nav id="paginador"></nav>
+                    <input type="hidden" name="pagactual" id="pagactual" value="1">
+                </div>
+                <div>
+                </div>
+                <div id="capaSuperpuesta" style="display:none;">
+                    <div class="spinner-border text-danger" style="width: 3rem; height: 3rem;"></div>
+                    <br />Cargando...<i class='fa fa-refresh fa-spin'></i>
+                </div>

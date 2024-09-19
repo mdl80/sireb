@@ -1,0 +1,364 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight:400;
+}
+*:focus {
+    outline: none;
+}
+
+.intervencionVentanaVista .jqx-window-close-button {
+    display: block;
+    
+}
+
+.list-group{
+    max-height: 90px;
+    margin-bottom: 10px;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.list-group-item {
+            cursor: pointer;
+}
+
+.list-group-item:hover {
+                    background-color: #ccc;
+}
+
+
+.jqx-window-content{
+    overflow-x: hidden;
+}
+
+.buscarIcon {
+    top: 0px;    
+}
+.img-thumbnail {
+    background-color: transparent;
+    
+}
+.barrioZonasOver{
+    background-color: #ffffcc;
+}
+
+.barrioEsJurisdiccion {
+    background-color: #e6ffe6;
+}
+.backMovilTr-1{
+    background-color: #ebfafa;
+}
+.backMovilTr-2{
+    background-color: #ffebe6;
+    
+}
+.align-middle {
+      vertical-align: middle;
+}
+.backMovilTr-4{
+    background-color: #ffffe6;
+    
+}
+
+.barrioNoEsJurisdiccion {
+    background-color: #fff2e6;
+}
+
+.botonNuevo:hover .fa.fa-plus {  
+         transition: 0.9s;
+    transform: rotateY(180deg);
+}
+.botonNuevo .fa.fa-plus {
+     transition: transform 0.5s ease 0s;
+}
+
+.botCerrar-ico {
+  background: url(/img/icon.png) no-repeat;
+    background-image: url("/img/icon.png");
+}
+
+
+.botCerrar-ico, .botCerrar-setPos a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+}
+.botCerrar-setPos a:link {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+}
+.botCerrar-setPos a:focus {
+  outline: none;
+}
+.botCerrar-setPos a:focus, a:hover {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+.botCerrar-setPos .botCerrar-close {
+ background-image:url(/img/close.png);
+ position:absolute;
+ right:-28px;
+ top:-28px;
+ width:30px;
+ height:30px;
+ margin-left:0;
+ transition:All .4s ease-in-out;
+}
+
+.botCerrar-setPos .botCerrar-close:hover {
+ background-image:url(/img/close_hover.png);
+ transform:rotate(180deg)
+}
+
+#ventanaIntervenciones .jqx-window-header{
+   display: none !important;
+ }
+ #ventanaIntervenciones {
+     border: none;
+     height: 58px;
+     max-width: 180px;
+     overflow: hidden;
+ }
+ 
+ #ventanaIntervenciones a{
+          width: 100%;
+          overflow: hidden;
+
+ }
+
+.btn-glyphicon {
+    padding:8px;
+    background:#ffffff;
+    margin-right:4px;
+}
+.icon-btn {
+    padding: 1px 15px 3px 2px;
+    border-radius:50px;
+}
+.jqx-window-close-button {
+    display: none;
+    
+}
+.ui-dialog { 
+    z-index: 2000 !important ;
+}
+
+#listaEventos {
+    text-overflow: ellipsis;  
+    display: -webkit-box;
+    font-size:9pt;
+    margin:0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.bombero-contenedor-tm {
+  border-bottom:3px solid #219ae2;
+  padding-top:10px;
+  padding-bottom:5px;
+  margin-bottom:20px;
+}
+p.bombero-contenedor-title-tm {
+  font-size:20px;
+  font-weight:400;
+  padding-top:7px;
+  color:#219ae2;
+}
+.bombero-contenedor-tm i.material-icons {
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:30px;
+  color:#219ae2;
+}
+.bombero-contenedor-input-container-tm {
+  padding-top:5px;
+}
+ 
+input.bombero-contenedor-input-tm {
+  width:100%;
+  border:none;
+  font-size:20px;
+  font-weight:300;
+  color:#219ae2;
+}
+input.bombero-contenedor-input-tm::-webkit-input-placeholder {
+   color: #aaaaaa;
+}
+ 
+a.editable{
+   color: #000000;
+}
+
+input.bombero-contenedor-input-tm:-moz-placeholder { 
+   color: #aaaaaa; 
+}
+ 
+input.bombero-contenedor-input-tm::-moz-placeholder {  
+   color: #aaaaaa; 
+}
+ 
+input.bombero-contenedor-input-tm:-ms-input-placeholder {  
+   color: #aaaaaa;
+}
+.bombero-contenedor-resultados-tm {
+  width:100%;
+}
+ 
+ 
+
+.bombero-columnas-tm ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.bombero-columnas-tm ul li {
+  text-align:left;
+}
+.bombero-columnas-tm ul li:first-child
+{
+    margin-top:0px;
+}
+
+.bombero-contenedor-resultado-ul-tm table {
+    margin: 1px;
+    padding: 0px;
+    width:100%;
+     border-left: 1px solid grey;
+     border-top: 1px solid grey;
+     border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.bombero-contenedor-resultado-ul-tm table td{
+     border-left: 1px solid grey;
+    width: 5%;
+}
+
+.bombero-contenedor-resultado-ul-tm tr.tipo-0{
+    background-color: #ff0000;
+}
+
+.bombero-contenedor-resultado-ul-tm tr.tipo-0 a{
+    color: #ffffff;
+}
+
+.bombero-contenedor-resultado-ul-tm tr.tipo-1{
+    background-color: #ffffff;
+}
+
+.bombero-contenedor-resultado-ul-tm tr.tipo-1 a{
+    color: #000000;
+}
+
+
+.bombero-columnas-tm table {
+    margin: 1px;
+    padding: 0px;
+    width:100%;
+    font-weight:bold;
+}
+
+.bombero-columnas-tm table td{
+    width: 20%;
+    min-width:200px;
+}
+
+.bombero-columnas-tm table td#num{
+    width: 3%;
+    min-width:20px;
+    text-align:center;
+
+}
+
+
+.bombero-contenedor-resultado-ul-tm .bombero-in-tm {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+ 
+}
+.bombero-contenedor-resultado-ul-tm .bombero-out-tm {
+  opacity:0;
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  height:0;
+  overflow:hidden;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+ 
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+     height:auto;
+      overflow:hidden;
+  }
+ 
+  to {
+    opacity: 0;
+     
+  }
+}
+
+.container {
+  padding-top: 10px;
+}
+.rounded {
+  width: 100px;
+}
+.img-thumbnail {
+  width: 80px !important;
+}
+.mensajeRespuesta {
+  display: none;
+  position:absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index:9999;
+  width: 40%;
+  top: 20%;
+}
+#capaSuperpuesta {
+  background: #ffffff;
+  color: #666666;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  float: left;
+  text-align: center;
+  padding-top: 25%;
+  opacity: 0.5;
+}
+
+#contenedorGeneral {
+    position: relative;
+    
+}
+.has-search .form-control-feedback {
+    right: initial;
+        left: 0;
+            color: #ccc;
+top: 0px;
+}
+.has-search .form-control {
+                padding-right: 12px;
+                    padding-left: 34px;
+}
+
+#paginador {
+justify-content: center;
+display: flex;
+}

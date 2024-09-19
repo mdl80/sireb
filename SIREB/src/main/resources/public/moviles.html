@@ -1,0 +1,174 @@
+                <div class="row">
+                    <div class="alert alert alert-primary" role="alert">
+                        <h4 class="text-primary text-center">Administrar Moviles</h4>
+                    </div>
+                    <div class="alert alert-success text-center mensajeRespuesta" id="mensajeAlerta" role="alert">
+                    </div>
+                    <!-- agregar / editar formulario emergente -->
+                    <div class="modal fade" id="ventanamovil" tabindex="-1" role="dialog" aria-labelledby="ventanamovilLabel" aria-hidden="true">
+                         <div class="modal-dialog">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <h5 class="modal-title" id="exampleModalLabel" style="display:inline;">Agregar/Editar movil <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" style="opacity: 100;">
+                                        <span class="botCerrar-setPos"><a class="botCerrar-ico botCerrar-close" href="#"></a></span>
+                                    </button>
+                                 </div>
+                                 <form id="formEditarMovil" method="POST" enctype="multipart/form-data">
+                                     <div class="modal-body">
+                                         <div class="row">
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="marca" class="control-label">Marca</label>
+                                                     <input type="text" class="form-control" id="marca" name="marca" required="required">
+                                                     <span class="fa fa-user-circle-o form-control-feedback" onclick="javascript:$('#marca').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="modelo" class="control-label">Modelo</label>
+                                                     <input type="text" class="form-control" id="modelo" name="modelo" required="required">
+                                                     <span class="fa fa-user-circle-o form-control-feedback" onclick="javascript:$('#modelo').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="plaza" class="control-label">Plaza</label>
+                                                     <input type="text" class="form-control" id="plaza" name="plaza">
+                                                     <span class="fa fa-phone form-control-feedback" onclick="javascript:$('#plaza').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="numeroMovil" class="control-label">Numero Movil</label>
+                                                     <input type="text" class="form-control" id="numeroMovil" name="numeroMovil" required="required">
+                                                     <span class="fa fa-phone form-control-feedback" onclick="javascript:$('#numeroMovil').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="tipoMovil" class="control-label">Tipo Movil</label>
+                                                     <select class="form-control" id="tipoMovil" name="tipoMovil" required="required" aria-label="Seleccione tipo Movil" style="appearance: none; -webkit-appearance: none; -moz-appearance: none;">
+                                                     </select>
+                                                     <span class="fa fa-tint form-control-feedback"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4" id="grupoTipoBomba">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="tipoBomba" class="control-label">Tipo Bomba</label>
+                                                     <select class="form-control" id="tipoBomba" name="tipoBomba" required="required" aria-label="Seleccione Tipo Bomba" style="appearance: none; -webkit-appearance: none; -moz-appearance: none;">
+                                                         <option value="1" selected>Centrifuga</option>
+                                                         <option value="2">Aspirada</option>
+                                                     </select>
+                                                     <span class="fa fa-venus-mars form-control-feedback"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="estado" class="control-label">Estado</label>
+                                                     <select class="form-control" id="estado" name="estado" required="required" aria-label="Seleccione estado" style="appearance: none; -webkit-appearance: none; -moz-appearance: none;">
+                                                         <option value="1" selected>En Servicio</option>
+                                                         <option value="2">Fuera de Servicio</option>
+                                                         <option value="3">En Reparacion</option>
+                                                         <option value="4">En funcionamiento con desperfectos</option>
+                                                     </select>
+                                                     <span class="fa fa-venus-mars form-control-feedback"></span>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="modal-footer">
+                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                         <button type="submit" class="btn btn-success" id="addButtonMovil">Guardar</button>
+                                         <input type="hidden" name="action" value="agregarmovil">
+                                         <input type="hidden" name="id" id="id" value="">
+                                         <input type="hidden" name="idCuartel" id="idCuartel" value="">
+                                     </div>
+                                 </form>
+                             </div>
+                         </div>
+                    </div>
+                    <!-- fin agregar / editar formulario emergente -->
+                    <!-- detalleMovil formulario emergente -->
+                    <div class="modal fade" id="detalleMovilModal" tabindex="-1" role="dialog" aria-labelledby="detalleMovilModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel" style="display: inline;">Detalle <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" style="opacity: 100;">
+                                        <span class="botCerrar-setPos"><a class="botCerrar-ico botCerrar-close" href="#"></a></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container" id="detalleMovil">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin detalleMovil formulario emergente -->
+
+                    <!-- borrar formulario emergente -->
+                    <div class="modal fade" id="borrarModal" tabindex="-1" role="dialog" aria-labelledby="borrarModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel" style="display: inline;">Eliminar <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" style="opacity: 100;">
+                                        <span class="botCerrar-setPos"><a class="botCerrar-ico botCerrar-close" href="#"></a></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container" id="borrar">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" id="eliminarDialog">Eliminar</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin borrar formulario emergente -->
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <button type="button" class="btn btn-primary botonNuevo" data-toggle="modal" data-target="#ventanamovil" id="botonNuevoMovil">Agregar movil <i class="fa fa-plus"></i></button>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-lg-push-5">
+                            <div class="form-group has-feedback has-search">
+                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Buscar..." id="inputBuscar">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- tabla de moviles -->
+                    <table class="table" id="tablamoviles">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Numero Movil</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Modelo</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <!-- fin tabla de moviles -->
+                    <nav id="paginador"></nav>
+                    <input type="hidden" name="pagactual" id="pagactual" value="1">
+                </div>
+                <div>
+                </div>
+                <div id="capaSuperpuesta" style="display:none;">
+                    <div class="spinner-border text-danger" style="width: 3rem; height: 3rem;"></div>
+                    <br />Cargando...<i class='fa fa-refresh fa-spin'></i>
+                </div>

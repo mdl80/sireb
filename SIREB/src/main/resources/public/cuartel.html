@@ -1,0 +1,217 @@
+                    <div class="row">
+                        <div class="alert alert-success text-center mensajeRespuesta" id="mensajeAlerta" role="alert"></div>
+                        <div class="col-md-11 col-md-offset-1">
+                            <ul class="nav nav-tabs faq-cat-tabs">
+                                <li class="active"><a href="#faq-cat-1" data-toggle="tab" id="secCuartel"><i class="fa fa-building"></i> Cuartel</a></li>
+                                <li><a href="#faq-cat-2" data-toggle="tab" id="secBarriosZonas"><i class="fa fa-map"></i> Barrios / Zonas</a></li>
+                                <li><a href="#faq-cat-3" data-toggle="tab" id="secGrados"><i class="fa fa-angle-double-up"></i> Grados</a></li>
+                            </ul>
+                            <div class="tab-content faq-cat-content">
+                                <div class="tab-pane active in fade" id="faq-cat-1">
+                                    <form id="formCuartel" method="POST" enctype="multipart/form-data">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group has-feedback">
+                                                        <label for="Logo" class="control-label">Logo</label>
+                                                        <img width="160px" height="auto" style="width:160px; height: auto;" id="logo" name="logo" aria-label="Logo" src="" />
+                                                        <label class="control-label">Seleccione un logo</label>
+                                                        <input type="file" class="filestyle" data-buttonText="Subir" onchange="imagenABase64(this)">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group has-feedback">
+                                                        <label for="Grado" class="control-label">Jefe Cuartel</label>
+                                                        <select class="form-control" id="jefeCuartel" name="jefeCuartel" required="required" aria-label="Seleccione Jefe Cuartel" style="appearance: none; -webkit-appearance: none; -moz-appearance: none;">
+                                                        </select>
+                                                        <span class="fa fa-eject form-control-feedback"></span>
+                                                    </div>
+                                                    <div class="form-group has-feedback">
+                                                        <label for="direccion" class="control-label">Direccion</label>
+                                                        <input type="text" class="form-control" id="direccion" name="direccion" required="required">
+                                                        <span class="fa fa-map-marker form-control-feedback" onclick="javascript:$('#direccion').focus()"></span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group has-feedback">
+                                                                <label for="edad" class="control-label">Numero Regional</label>
+                                                                <input type="number" class="form-control" id="regionalNumero" name="regionalNumero" required="required">
+                                                                <span class="fa fa-map form-control-feedback" onclick="javascript:$('#regionalNumero').focus()"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group has-feedback">
+                                                                <label for="edad" class="control-label">Numero Cuartel</label>
+                                                                <input type="number" class="form-control" id="cuartelNumero" name="cuartelNumero" required="required">
+                                                                <span class="fa fa-building form-control-feedback" onclick="javascript:$('#cuartelNumero').focus()"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <center><button type="submit" class="btn btn-success" id="guardarCuartel">Guardar</button></center>
+                                    </form>
+                                </div>
+                                <div class="tab-pane" id="faq-cat-2">
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-primary botonNuevo" data-toggle="modal" data-target="#ventanabarriozona" id="botonNuevoBarrioZona">Agregar Barrio/Zona <i class="fa fa-plus"></i></button>
+                                    </div>
+                                    <table class="table" id="tiTulotablabarrioszonas">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Barrio</th>
+                                                <th scope="col" style="text-align:center;">Juridisccion</th>
+                                                <th scope="col" style="text-align:center;">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div style="min-height: 150px; max-height: 250px; overflow: auto;" id="contenedorBarriosZonas">
+                                        <table class="table" id="tablabarrioszonas">
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>                                    
+                                <div class="tab-pane" id="faq-cat-3">
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-primary botonNuevo" data-toggle="modal" data-target="#ventanagrado" id="botonNuevoGrado">Agregar Grado <i class="fa fa-plus"></i></button>
+                                    </div>
+                                    <table class="table" id="tiTulotablagrados">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Grado</th>
+                                                <th scope="col" style="text-align:center;">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div style="min-height: 150px; max-height: 250px; overflow: auto;" id="contenedorGrados">
+                                        <table class="table" id="tablagrados">
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                                <div id="CargandoCambios" style="display:none;"><span>Cargando...<i class="fa fa-refresh fa-spin"></i></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="ventanabarriozona" tabindex="-1" role="dialog" aria-labelledby="ventanabarriozonaLabel" aria-hidden="true">
+                         <div class="modal-dialog">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <h5 class="modal-title" id="exampleModalLabel" style="display:inline;">Editar Barrio/Zona <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" style="opacity: 100;">
+                                        <span class="botCerrar-setPos"><a class="botCerrar-ico botCerrar-close" href="#"></a></span>
+                                    </button>
+                                 </div>
+                                 <form id="formEditarBarrioZona" method="POST" enctype="multipart/form-data">
+                                     <div class="modal-body">
+                                         <div class="row">
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="nombre1" class="control-label">Barrio</label>
+                                                     <input type="text" class="form-control" id="barrioZona" name="barrioZona" required="required">
+                                                     <span class="fa fa-user-circle-o form-control-feedback" onclick="javascript:$('#barrioZona').focus()"></span>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="nombre2" class="control-label">Jurisdiccion</label>
+                                                     <select class="form-control" id="jurisdiccion" name="jurisdiccion" required="required" aria-label="Seleccione pertenencia a jurisdiccion" style="appearance: none; -webkit-appearance: none; -moz-appearance: none;">
+                                                         <option value="true" selected>Si</option>
+                                                         <option value="false">No</option>
+                                                     </select>
+                                                     <span class="fa fa-user-circle-o form-control-feedback" onclick="javascript:$('#nombre2').focus()"></span>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="modal-footer">
+                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                         <button type="submit" class="btn btn-success" id="guardarBarrioZona">Guardar</button>
+                                         <input type="hidden" name="action" value="guardarBarrioZona">
+                                         <input type="hidden" name="idBarrioZona" id="idBarrioZona" value="">
+                                     </div>
+                                 </form>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="modal" id="borrarBarriozona" tabindex="-1" role="dialog" aria-labelledby="borrarBarriozonaLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel" style="display: inline;">Eliminar <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" style="opacity: 100;">
+                                        <span class="botCerrar-setPos"><a class="botCerrar-ico botCerrar-close" href="#"></a></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container" id="borrar">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" id="eliminarDialog">Eliminar</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="modal" id="ventanagrado" tabindex="-1" role="dialog" aria-labelledby="ventanagradoLabel" aria-hidden="true">
+                         <div class="modal-dialog modal-sm">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <h5 class="modal-title" id="exampleModalLabel" style="display:inline;">Editar Grado <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" style="opacity: 100;">
+                                        <span class="botCerrar-setPos"><a class="botCerrar-ico botCerrar-close" href="#"></a></span>
+                                    </button>
+                                 </div>
+                                 <form id="formEditarGrado" method="POST" enctype="multipart/form-data">
+                                     <div class="modal-body">
+                                         <div class="row">
+                                             <div class="col">
+                                                 <div class="form-group has-feedback">
+                                                     <label for="grado" class="control-label">Grado</label>
+                                                     <input type="text" class="form-control" id="grado" name="grado" required="required">
+                                                     <span class="fa fa-user-circle-o form-control-feedback" onclick="javascript:$('#grado').focus()"></span>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="modal-footer">
+                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                         <button type="submit" class="btn btn-success" id="guardarGrado">Guardar</button>
+                                         <input type="hidden" name="action" value="guardarGrado">
+                                         <input type="hidden" name="idGrado" id="idGrado" value="">
+                                     </div>
+                                 </form>
+                             </div>
+                         </div>
+                    </div>
+                    <div class="modal" id="borrarGrado" tabindex="-1" role="dialog" aria-labelledby="borrargradoLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel" style="display: inline;">Eliminar <i class="fa fa-user-circle-o" aria-hidden="true"></i></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" style="opacity: 100;">
+                                        <span class="botCerrar-setPos"><a class="botCerrar-ico botCerrar-close" href="#"></a></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container" id="borrarContenedor">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" id="eliminarDialog">Eliminar</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>

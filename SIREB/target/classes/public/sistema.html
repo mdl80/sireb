@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="es-419">
+    <head>
+        <title>SIREB - Principal</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+        <meta http-equiv="Expires" content="Thu, 01 Jan 1970 00:00:00 GMT" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/estilos.css?v8" />
+        <link href="/css/theme.css" rel="stylesheet" media="screen" /> 
+        <link rel="stylesheet" href="/css/theme-elements.css" />        
+        <link href="/css/style.css" rel="stylesheet" media="screen" />
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/jqx.base.css">
+        <link rel="stylesheet" href="/css/jqx.energyblue.css">
+        <script src="/js/jquery-1.11.0.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxcore.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxdocking.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxlayout.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxmenu.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxbuttons.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxribbon.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxwindow.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxdockinglayout.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxgrid.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxscrollbar.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxdata.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxgrid.selection.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxlistbox.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxdropdownlist.js"></script>
+        <script type="text/javascript" src="/js/jqwidgets/jqxtextarea.js"></script>
+        <script src="/vendor/jquery.validation/jquery.validate.min.js"></script>
+        <script src="/vendor/jquery.validation/additional-methods.min.js"></script>                
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/bootstrap-editable.min.js"></script>
+        <script src="/vendor/modernizr/modernizr.min.js"></script>
+        <script src="/js/cookie.js"></script>
+    </head>
+    <body data-plugin-page-transition>
+        <div class="body">
+            <header id="header" class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}" >
+				<div class="header-body">
+					<div class="header-container container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-row">
+									<div class="header-logo">
+										<a href="sistema.html#principal" id="botLogo" class="goto-top"><img id="logoCuartel" alt="Sistema de Registro de Emergencias para cuarteles de Bomberos" width="180" height="70px" data-sticky-width="180" data-sticky-height="auto" data-sticky-top="0" src="/img/logo_sinfondo.png" /><p style="text-align: center;"><span id="titDireccion">Cargando...<i class="fa fa-refresh fa-spin"></i></span></p></a>
+									</div>
+								</div>
+							</div>
+							<div class="header-column justify-content-end">
+								<div class="header-row">
+									<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-dark-text order-2 order-lg-1">
+										<div class="header-nav-main header-nav-main-font-lg header-nav-main-font-lg-upper-2 header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
+											<nav class="collapse">																								
+												<ul class="nav nav-pills" id="mainNav">
+                                                                                                    <li>
+                                                                                                        <a id="botPrincipal" class="dropdown-item dropdown-toggle" href="#principal">
+															Principal
+                                                                                                        </a>
+                                                                                                    </li>
+												    <li class="dropdown">
+														<a id="botBomberos" class="dropdown-item dropdown-toggle" href="#bomberos">
+															Administrar
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a id="botBomberosSub" class="dropdown-item" data-hash="" data-hash-offset="68" href="#bomberos">Bomberos</a>
+															</li>
+															<li>
+																<a id="botCuartel" class="dropdown-item" data-hash="" data-hash-offset="68" href="#cuartel">Cuartel</a>
+															</li>
+                                                                                                                        <li>
+																<a id="botMoviles" class="dropdown-item" data-hash="" data-hash-offset="68" href="#moviles">Moviles</a>
+															</li>
+														</ul>
+													</li>
+											    <li class="dropdown">
+														<a class="dropdown-item dropdown-toggle" href="#">
+															Sesion	
+														</a>
+														<ul class="dropdown-menu">
+															<li>
+																<a class="dropdown-item" data-hash="" data-hash-offset="68" href="#" onclick="cambiarClave();">Cambiar Clave</a>
+															</li>
+															<li>
+																<a class="dropdown-item" data-hash="" data-hash-offset="68" href="#" onclick="cerrarSesion();">Cerrar Sesion</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+									<button class="btn btn-primary header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+														    <i class="fa fa-bars"></i>
+																			    </button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </header>
+            <div role="main" class="main">
+                <div class="container" id="contenedorGeneral">
+                </div>
+            </div>
+            <footer id="footer" class="footer-texts-more-lighten">
+				<div class="container">
+					<div class="row py-4 my-5">
+						<div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+							<h5 class="text-4 text-color-light mb-3">CONTACTO</h5>
+							<ul class="social-icons social-icons-clean-with-border social-icons-medium">
+								<li class="social-icons-facebook">
+									<a href="" class="no-footer-css" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li class="social-icons-twitter">
+									<a href="" class="no-footer-css" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li class="social-icons-youtube">
+									<a href="" class="no-footer-css" target="_blank" title="Youtube"><i class="fa fa-youtube"></i></a>
+								</li>
+								<li class="social-icons-instagram">
+									<a href="" class="no-footer-css" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
+								</li>								
+								<li class="social-icons-whatsapp">
+									<a href="" class="no-footer-css" target="_blank" title="Whatsapp"><i class="fa fa-whatsapp"></i></a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-6 col-lg-6">
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="footer-copyright footer-copyright-style-2 pt-4 pb-5">
+						<div class="row">
+							<div class="col-12 text-center">
+								<p class="mb-0">SIREB S.A. © 2022. All Rights Reserved</p>
+							</div>
+						</div>
+					</div>
+				</div>
+            </footer>
+        </div>
+        <script src="/js/funciones.js?v=8"></script>        
+        <script src="/js/script.js?v=8"></script>
+        <script src="/js/jquery.easing.min.js"></script>
+        <script src="/js/theme.js"></script>
+        <script src="/js/theme.init.js"></script>
+    </body>
+</html>

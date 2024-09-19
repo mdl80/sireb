@@ -1,0 +1,17 @@
+use SIREB;
+
+CREATE TABLE IF NOT EXISTS `SIREB`.`Eventos` (
+`idEventos` INT NOT NULL AUTO_INCREMENT,
+`Tipo` VARCHAR(100) NOT NULL,
+`Mensaje` VARCHAR(100) NOT NULL,
+`Fecha` datetime NOT NULL,
+`idBombero` INT NOT NULL,
+PRIMARY KEY (`idEventos`),
+CONSTRAINT `fk_idBombero`
+  FOREIGN KEY (`idBombero`)
+  REFERENCES `SIREB`.`Bomberos`(`idBombero`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION)
+  ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
